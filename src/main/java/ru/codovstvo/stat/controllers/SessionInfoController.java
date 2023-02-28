@@ -37,7 +37,7 @@ public class SessionInfoController {
         }
         System.out.println(requestBody);
 
-        sessionInfoService.main3(requestBody);
+        sessionInfoService.main(requestBody);
 
         return new ResponseEntity(HttpStatus.OK);
     }

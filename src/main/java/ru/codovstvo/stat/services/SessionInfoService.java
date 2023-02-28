@@ -1,49 +1,42 @@
 package ru.codovstvo.stat.services;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
 import ru.codovstvo.stat.Classes.Info;
-
-import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;  
+import ru.codovstvo.stat.entitys.SessionInfo;
+import ru.codovstvo.stat.repo.SessionInfoRepo;
 
 @Service
 public class SessionInfoService {
-    
-    // public void main(String reqString){
 
-    //     JSONObject json = new JSONObject(reqString);  
+    @Autowired
+    SessionInfoRepo sessionInfoRepo;
 
-    //     System.out.println("----------------------");
-    //     System.out.println("session: " + json.getString("countSeccion"));
-    //     System.out.println("lengthSeccion: " + json.getString("lengthSeccion"));
-    //     System.out.println("----------------------");
-    // }
+    public void main(String reqString){
+        Info info = parseJsonToInfoClass(reqString);
 
-    // public void main2(String reqString) throws ParseException{
-    //     Object obj = new JSONParser().parse(reqString);
-    //     JSONObject jo = (JSONObject) obj;
+        System.out.println("----------------------");
+        System.out.println("session: " + info.countSeccion);
+        System.out.println("lengthSeccion: " + info.lengthSeccion);
+        System.out.println("----------------------");
 
-    //     System.out.println("----------------------");
-    //     System.out.println("session: " + jo.getString("countSeccion"));
-    //     System.out.println("lengthSeccion: " + jo.getString("lengthSeccion"));
-    //     System.out.println("----------------------");
-    // }
+        SessionInfo newSessionInfo = new SessionInfo(info);
+        
+        if (sessionInfoRepo.existsByUserIddAndCountSession(info.userId, info.countSeccion)) {
+            SessionInfo oldSessionInfo = sessionInfoRepo.findByUserIddAndCountSession(info.userId, info.countSeccion);
+            Long id = oldSessionInfo.getId();
+            newSessionInfo.setId(id);
+        }
 
-    public void main3(String reqString){
+        sessionInfoRepo.save(newSessionInfo);
+    }
 
+    public Info parseJsonToInfoClass(String str){
         Gson g = new Gson();
-
-        Info info = g.fromJson(reqString, Info.class);
-
-        System.out.println("----------------------");
-        System.out.println("session: " + info.countSession);
-        System.out.println("lengthSeccion: " + info.leghtSession);
-        System.out.println("----------------------");
+        return g.fromJson(str, Info.class);
     }
 
 }

@@ -1,20 +1,24 @@
 package ru.codovstvo.stat.entitys;
 
-import java.util.List;
-
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import lombok.Data;
+import ru.codovstvo.stat.Classes.Info;
+import ru.codovstvo.stat.services.Converters;
 
 @Data
 @Entity
-
 public class SessionInfo {
+
+    @Autowired
+    Converters converters;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -82,21 +86,21 @@ public class SessionInfo {
     private int successDailyTask;
 
 
-    private String countBuyItemShopMoney;
+    private int countBuyItemShopMoney;
 
-    private String countBuyItemShopRuby;
+    private int countBuyItemShopRuby;
 
-    private String countBuyItemShopEnergy;
+    private int countBuyItemShopEnergy;
 
-    private String countBuyItemShopWorker;
+    private int countBuyItemShopWorker;
 
-    private String countBuyItemShopFruit;
+    private int countBuyItemShopFruit;
 
-    private String countBuyItemShopResources;
+    private int countBuyItemShopResources;
 
-    private String countBuyItemShopSales;
+    private int countBuyItemShopSales;
 
-    private String countBuyItemShopOrder;
+    private int countBuyItemShopOrder;
     
 
     private String indexBuyItemShopMoney;
@@ -138,9 +142,73 @@ public class SessionInfo {
     @Column(columnDefinition="TEXT")
     private String fullData;
 
-    public SessionInfo()
+    public SessionInfo(){}
+
+
+    public SessionInfo(Info info)
     {
+        this.UserIdd = info.userId;
+        this.startDateSession = info.startDataSession;
+        this.startTimeSession = info.startTimeSession;
+        this.endDateSession = info.endDataSession;
+        this.endTimeSession = info.endTimeSession;
+        this.leghtSession = info.lengthSeccion;
+        this.countSession = info.countSeccion;
+
+        this.wastesMoney = info.wastesMoney;
+        this.wastesRuby = info.wastesRuby;
+        this.wastesEnergy = info.wastesEnergy;
+        this.wastesFruit = info.wastesFruit;
+        this.wastesApple = info.wastesApple;
+        this.wastesTangerine = info.wastesTangerine;
+        this.wastesRaspberry = info.wastesRaspberry;
+        this.wastesKey = info.wastesKey;
+
+        this.earnedExpirience = info.earnedExpirience;
+        this.earnedMoney = info.earnedMoney;
+        this.earnedRuby = info.earnedRuby;
+        this.earnedEnergy = info.earnedEnergy;
+        this.earnedFruit = info.earnedFruit;
+        this.earnedApple = info.earnedApple;
+        this.earnedTangerine = info.earnedTangerine;
+        this.earnedRaspberry = info.earnedRaspberry;
+        this.earnedKey = info.earnedKey;
+
+        this.activeOrder = info.activeOrder;
+        this.collectOrder = info.collectOrder;
+
+        this.successQuest = info.successQuest;
+        this.successDailyTask = info.successDailyTask;
+
+        this.countBuyItemShopMoney = info.countBuyItemShopMoney;
+        this.countBuyItemShopRuby = info.countBuyItemShopRuby;
+        this.countBuyItemShopEnergy = info.countBuyItemShopEnergy;
+        this.countBuyItemShopWorker = info.countBuyItemShopWorker;
+        this.countBuyItemShopFruit = info.countBuyItemShopFruit;
+        this.countBuyItemShopResources = info.countBuyItemShopResources;
+        this.countBuyItemShopSales = info.countBuyItemShopSales;
+        this.countBuyItemShopOrder = info.countBuyItemShopOrder;
+
+        this.indexBuyItemShopMoney = converters.arrayToString(info.indexBuyItemShopMoney);
+        this.clickBuyItemShopRuby = converters.arrayToString(info.clickBuyItemShopRuby);
+        this.indexBuyItemShopRuby = converters.arrayToString(info.indexBuyItemShopRuby);
+        this.indexBuyItemShopEnergy = converters.arrayToString(info.indexBuyItemShopEnergy);
+        this.indexBuyItemShopWorker = converters.arrayToString(info.indexBuyItemShopWorker);
+        this.indexBuyItemShopFruit = converters.arrayToString(info.indexBuyItemShopFruit);
+        this.indexBuyItemShopResources = converters.arrayToString(info.indexBuyItemShopResources);
+        this.indexBuyItemShopSales = converters.arrayToString(info.indexBuyItemShopSales);
         
+        this.clickAD = info.clickAD;
+        this.successAD = info.successAD;
+        this.errorAD = info.errorAD;
+        
+        this.clickDonate = info.clickDonate;
+        this.successDonate = info.successDonate;
+        this.redirectCount = info.redirectCount;
+
+        this.typeClickDonate = converters.arrayToString(info.typeClickDonate);
+        this.timeClickDonate = converters.arrayToString(info.timeClickDonate);
+        this.timeSpawnClouds = converters.arrayToString(info.timeSpawnClouds);
     }
 
 }

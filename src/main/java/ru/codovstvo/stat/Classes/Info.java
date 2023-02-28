@@ -4,17 +4,17 @@ public class Info {
 
     public String userId;
 
-    public String startDateSession;
+    public String startDataSession;
 
     public String startTimeSession;
 
-    public String endDateSession;
+    public String endDataSession;
 
     public String endTimeSession;
 
-    public String leghtSession;
+    public String lengthSeccion;
 
-    public int countSession;
+    public int countSeccion;
 
 
     public int wastesMoney;
@@ -78,7 +78,7 @@ public class Info {
     public int countBuyItemShopSales;
 
     public int countBuyItemShopOrder;
-    
+
 
     public int[] indexBuyItemShopMoney;
 
