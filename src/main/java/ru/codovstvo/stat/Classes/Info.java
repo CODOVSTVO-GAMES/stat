@@ -63,37 +63,37 @@ public class Info {
     public int successDailyTask;
 
 
-    public String countBuyItemShopMoney;
+    public int[] countBuyItemShopMoney;
 
-    public String countBuyItemShopRuby;
+    public int[] countBuyItemShopRuby;
 
-    public String countBuyItemShopEnergy;
+    public int[] countBuyItemShopEnergy;
 
-    public String countBuyItemShopWorker;
+    public int[] countBuyItemShopWorker;
 
-    public String countBuyItemShopFruit;
+    public int[] countBuyItemShopFruit;
 
-    public String countBuyItemShopResources;
+    public int[] countBuyItemShopResources;
 
-    public String countBuyItemShopSales;
+    public int[] countBuyItemShopSales;
 
-    public String countBuyItemShopOrder;
+    public int[] countBuyItemShopOrder;
 
-    public String indexBuyItemShopMoney;
+    public int[] indexBuyItemShopMoney;
 
-    public String clickBuyItemShopRuby;
+    public int[] clickBuyItemShopRuby;
 
-    public String indexBuyItemShopRuby;
+    public int[] indexBuyItemShopRuby;
 
-    public String indexBuyItemShopEnergy;
+    public int[] indexBuyItemShopEnergy;
 
-    public String indexBuyItemShopWorker;
+    public int[] indexBuyItemShopWorker;
 
-    public String indexBuyItemShopFruit;
+    public int[] indexBuyItemShopFruit;
 
-    public String indexBuyItemShopResources;
+    public int[] indexBuyItemShopResources;
     
-    public String indexBuyItemShopSales;
+    public int[] indexBuyItemShopSales;
 
 
     public int clickAD;
@@ -109,9 +109,9 @@ public class Info {
 
     public int redirectCount;
 
-    public String typeClickDonate;
+    public int[] typeClickDonate;
 
-    public String timeClickDonate;
+    public int[] timeClickDonate;
 
-    public String timeSpawnClouds;
+    public int[] timeSpawnClouds;
 }

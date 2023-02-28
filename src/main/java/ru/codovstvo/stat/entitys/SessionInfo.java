@@ -97,23 +97,23 @@ public class SessionInfo {
     private String countBuyItemShopSales;
 
     private String countBuyItemShopOrder;
-
-
-    private int[] indexBuyItemShopMoney;
-
-    private int[] clickBuyItemShopRuby;
-
-    private int[] indexBuyItemShopRuby;
-
-    private int[] indexBuyItemShopEnergy;
-
-    private int[] indexBuyItemShopWorker;
-
-    private int[] indexBuyItemShopFruit;
-
-    private int[] indexBuyItemShopResources;
     
-    private int[] indexBuyItemShopSales;
+
+    private String indexBuyItemShopMoney;
+
+    private String clickBuyItemShopRuby;
+
+    private String indexBuyItemShopRuby;
+
+    private String indexBuyItemShopEnergy;
+
+    private String indexBuyItemShopWorker;
+
+    private String indexBuyItemShopFruit;
+
+    private String indexBuyItemShopResources;
+    
+    private String indexBuyItemShopSales;
 
 
     private int clickAD;
