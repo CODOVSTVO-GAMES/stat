@@ -3,6 +3,7 @@ package ru.codovstvo.stat.entitys;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -97,21 +98,28 @@ public class SessionInfo {
 
     private String countBuyItemShopOrder;
 
-
+    @ElementCollection
     private List<Integer> indexBuyItemShopMoney;
 
+    @ElementCollection
     private List<Integer> clickBuyItemShopRuby;
 
+    @ElementCollection
     private List<Integer> indexBuyItemShopRuby;
 
+    @ElementCollection
     private List<Integer> indexBuyItemShopEnergy;
 
+    @ElementCollection
     private List<Integer> indexBuyItemShopWorker;
 
+    @ElementCollection
     private List<Integer> indexBuyItemShopFruit;
 
+    @ElementCollection
     private List<Integer> indexBuyItemShopResources;
     
+    @ElementCollection
     private List<Integer> indexBuyItemShopSales;
 
 
@@ -128,11 +136,13 @@ public class SessionInfo {
 
     private int redirectCount;
 
-
+    @ElementCollection
     private List<String> typeClickDonate;
 
+    @ElementCollection
     private List<Integer> timeClickDonate;
 
+    @ElementCollection
     private List<Integer> timeSpawnClouds;
 
     @Column(columnDefinition="TEXT")
