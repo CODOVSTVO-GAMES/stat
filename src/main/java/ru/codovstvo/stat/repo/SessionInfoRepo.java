@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import ru.codovstvo.stat.entitys.SessionInfo;
 
 public interface SessionInfoRepo extends CrudRepository<SessionInfo, Long> {
-    SessionInfo findByUserIddAndCountSession(String UserIdd, int CountSession);
+    SessionInfo findByPlatformUserIdAndCountSession(String platformUserId, int CountSession);
 }

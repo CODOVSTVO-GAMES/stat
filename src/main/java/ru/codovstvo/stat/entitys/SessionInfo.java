@@ -19,7 +19,7 @@ public class SessionInfo {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;    
 
-    private String UserIdd;
+    private String platformUserId;
 
 
     private String startDateSession;
@@ -142,7 +142,7 @@ public class SessionInfo {
 
     public SessionInfo(Info info)
     {
-        this.UserIdd = info.userId;
+        this.platformUserId = info.userId;
         this.startDateSession = info.startDataSession;
         this.startTimeSession = info.startTimeSession;
         this.endDateSession = info.endDataSession;
