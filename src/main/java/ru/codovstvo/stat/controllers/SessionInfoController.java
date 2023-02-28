@@ -35,7 +35,7 @@ public class SessionInfoController {
             System.out.println("неверный хеш дата контроллер");
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
-        System.out.println(requestBody);
+        // System.out.println(requestBody);
 
         sessionInfoService.main(requestBody);
 

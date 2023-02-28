@@ -18,10 +18,10 @@ public class SessionInfoService {
     public void main(String reqString){
         Info info = parseJsonToInfoClass(reqString);
 
-        System.out.println("----------------------");
-        System.out.println("session: " + info.countSeccion);
-        System.out.println("lengthSeccion: " + info.lengthSeccion);
-        System.out.println("----------------------");
+        // System.out.println("----------------------");
+        // System.out.println("session: " + info.countSeccion);
+        // System.out.println("lengthSeccion: " + info.lengthSeccion);
+        // System.out.println("----------------------");
 
         SessionInfo newSessionInfo = new SessionInfo(info);
         
