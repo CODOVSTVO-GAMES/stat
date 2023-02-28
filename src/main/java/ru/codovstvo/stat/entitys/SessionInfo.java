@@ -135,7 +135,7 @@ public class SessionInfo {
     private String timeSpawnClouds;
 
     @Column(columnDefinition="TEXT")
-    private String full;
+    private String fullData;
 
     public SessionInfo()
     {
