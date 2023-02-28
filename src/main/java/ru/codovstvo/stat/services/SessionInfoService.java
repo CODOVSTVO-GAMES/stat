@@ -11,15 +11,15 @@ import org.json.simple.parser.ParseException;
 @Service
 public class SessionInfoService {
     
-    public void main(String reqString){
+    // public void main(String reqString){
 
-        JSONObject json = new JSONObject(reqString);  
+    //     JSONObject json = new JSONObject(reqString);  
 
-        System.out.println("----------------------");
-        System.out.println("session: " + json.getString("countSeccion"));
-        System.out.println("lengthSeccion: " + json.getString("lengthSeccion"));
-        System.out.println("----------------------");
-    }
+    //     System.out.println("----------------------");
+    //     System.out.println("session: " + json.getString("countSeccion"));
+    //     System.out.println("lengthSeccion: " + json.getString("lengthSeccion"));
+    //     System.out.println("----------------------");
+    // }
 
 
     public void main2(String reqString) throws ParseException{
