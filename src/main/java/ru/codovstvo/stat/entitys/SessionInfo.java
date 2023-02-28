@@ -212,7 +212,7 @@ public class SessionInfo {
         if (array.length == 0) return "";
 
         for(int i = 0; i < array.length; i++){
-            str = str + array[i] + "_";
+            str = str + array[i] + "-";
         }
 
         return str;
