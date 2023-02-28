@@ -8,3 +8,7 @@ docker-compose up
 sudo chmod +x start.sh
 sudo sed -i -e 's/\r$//' start.sh
 sudo ./start.sh
+
+sudo chmod +x debug.sh
+sudo sed -i -e 's/\r$//' debug.sh
+sudo ./debug.sh

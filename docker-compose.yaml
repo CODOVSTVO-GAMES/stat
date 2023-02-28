@@ -5,7 +5,7 @@ services:
     build: .
     restart: always
     ports: 
-    - 8011:8080
+    - 9011:8080
     depends_on:
       - psqldb
     networks:
@@ -30,7 +30,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.codovstvo
       PGADMIN_DEFAULT_PASSWORD: egor
     ports:
-      - "8013:80"
+      - "9013:80"
     networks:
       - back
 
