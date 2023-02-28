@@ -63,21 +63,22 @@ public class Info {
     public int successDailyTask;
 
 
-    public int[] countBuyItemShopMoney;
+    public int countBuyItemShopMoney;
 
-    public int[] countBuyItemShopRuby;
+    public int countBuyItemShopRuby;
 
-    public int[] countBuyItemShopEnergy;
+    public int countBuyItemShopEnergy;
 
-    public int[] countBuyItemShopWorker;
+    public int countBuyItemShopWorker;
 
-    public int[] countBuyItemShopFruit;
+    public int countBuyItemShopFruit;
 
-    public int[] countBuyItemShopResources;
+    public int countBuyItemShopResources;
 
-    public int[] countBuyItemShopSales;
+    public int countBuyItemShopSales;
 
-    public int[] countBuyItemShopOrder;
+    public int countBuyItemShopOrder;
+    
 
     public int[] indexBuyItemShopMoney;
 
