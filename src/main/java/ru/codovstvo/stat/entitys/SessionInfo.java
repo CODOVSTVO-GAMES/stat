@@ -17,9 +17,6 @@ import ru.codovstvo.stat.services.Converters;
 @Entity
 public class SessionInfo {
 
-    @Autowired
-    Converters converters;
-
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;    
@@ -189,14 +186,14 @@ public class SessionInfo {
         this.countBuyItemShopSales = info.countBuyItemShopSales;
         this.countBuyItemShopOrder = info.countBuyItemShopOrder;
 
-        this.indexBuyItemShopMoney = converters.arrayToString(info.indexBuyItemShopMoney);
-        this.clickBuyItemShopRuby = converters.arrayToString(info.clickBuyItemShopRuby);
-        this.indexBuyItemShopRuby = converters.arrayToString(info.indexBuyItemShopRuby);
-        this.indexBuyItemShopEnergy = converters.arrayToString(info.indexBuyItemShopEnergy);
-        this.indexBuyItemShopWorker = converters.arrayToString(info.indexBuyItemShopWorker);
-        this.indexBuyItemShopFruit = converters.arrayToString(info.indexBuyItemShopFruit);
-        this.indexBuyItemShopResources = converters.arrayToString(info.indexBuyItemShopResources);
-        this.indexBuyItemShopSales = converters.arrayToString(info.indexBuyItemShopSales);
+        this.indexBuyItemShopMoney = arrayToString(info.indexBuyItemShopMoney);
+        this.clickBuyItemShopRuby = arrayToString(info.clickBuyItemShopRuby);
+        this.indexBuyItemShopRuby = arrayToString(info.indexBuyItemShopRuby);
+        this.indexBuyItemShopEnergy = arrayToString(info.indexBuyItemShopEnergy);
+        this.indexBuyItemShopWorker = arrayToString(info.indexBuyItemShopWorker);
+        this.indexBuyItemShopFruit = arrayToString(info.indexBuyItemShopFruit);
+        this.indexBuyItemShopResources = arrayToString(info.indexBuyItemShopResources);
+        this.indexBuyItemShopSales = arrayToString(info.indexBuyItemShopSales);
         
         this.clickAD = info.clickAD;
         this.successAD = info.successAD;
@@ -206,9 +203,21 @@ public class SessionInfo {
         this.successDonate = info.successDonate;
         this.redirectCount = info.redirectCount;
 
-        this.typeClickDonate = converters.arrayToString(info.typeClickDonate);
-        this.timeClickDonate = converters.arrayToString(info.timeClickDonate);
-        this.timeSpawnClouds = converters.arrayToString(info.timeSpawnClouds);
+        this.typeClickDonate = arrayToString(info.typeClickDonate);
+        this.timeClickDonate = arrayToString(info.timeClickDonate);
+        this.timeSpawnClouds = arrayToString(info.timeSpawnClouds);
+    }
+
+    public String arrayToString(int[] array){
+        String str = new String();
+
+        if (array.length == 0) return "";
+
+        for(int i = 0; i < array.length; i++){
+            str = str + array[i] + "_";
+        }
+
+        return str;
     }
 
 }
