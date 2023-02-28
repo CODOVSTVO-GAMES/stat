@@ -2,116 +2,116 @@ package ru.codovstvo.stat.Classes;
 
 public class Info { 
 
-    private String userId;
+    public String userId;
 
-    private String startDateSession;
+    public String startDateSession;
 
-    private String startTimeSession;
+    public String startTimeSession;
 
-    private String endDateSession;
+    public String endDateSession;
 
-    private String endTimeSession;
+    public String endTimeSession;
 
-    private String leghtSession;
+    public String leghtSession;
 
-    private int countSession;
-
-
-    private int wastesMoney;
-
-    private int wastesRuby;
-
-    private int wastesEnergy;
-
-    private int wastesFruit;
-
-    private int wastesApple;
-
-    private int wastesTangerine;
-
-    private int wastesRaspberry;
-
-    private int wastesKey;
+    public int countSession;
 
 
-    private int earnedExpirience;
+    public int wastesMoney;
+
+    public int wastesRuby;
+
+    public int wastesEnergy;
+
+    public int wastesFruit;
+
+    public int wastesApple;
+
+    public int wastesTangerine;
+
+    public int wastesRaspberry;
+
+    public int wastesKey;
+
+
+    public int earnedExpirience;
     
-    private int earnedMoney;
+    public int earnedMoney;
 
-    private int earnedRuby;
+    public int earnedRuby;
 
-    private int earnedEnergy;
+    public int earnedEnergy;
 
-    private int earnedFruit;
+    public int earnedFruit;
 
-    private int earnedApple;
+    public int earnedApple;
 
-    private int earnedTangerine;
+    public int earnedTangerine;
 
-    private int earnedRaspberry;
+    public int earnedRaspberry;
 
-    private int earnedKey;
+    public int earnedKey;
 
     
-    private int activeOrder;
+    public int activeOrder;
     
-    private int collectOrder;
+    public int collectOrder;
 
 
-    private int successQuest;
+    public int successQuest;
 
-    private int successDailyTask;
+    public int successDailyTask;
 
 
-    private String countBuyItemShopMoney;
+    public String countBuyItemShopMoney;
 
-    private String countBuyItemShopRuby;
+    public String countBuyItemShopRuby;
 
-    private String countBuyItemShopEnergy;
+    public String countBuyItemShopEnergy;
 
-    private String countBuyItemShopWorker;
+    public String countBuyItemShopWorker;
 
-    private String countBuyItemShopFruit;
+    public String countBuyItemShopFruit;
 
-    private String countBuyItemShopResources;
+    public String countBuyItemShopResources;
 
-    private String countBuyItemShopSales;
+    public String countBuyItemShopSales;
 
-    private String countBuyItemShopOrder;
+    public String countBuyItemShopOrder;
 
-    private String indexBuyItemShopMoney;
+    public String indexBuyItemShopMoney;
 
-    private String clickBuyItemShopRuby;
+    public String clickBuyItemShopRuby;
 
-    private String indexBuyItemShopRuby;
+    public String indexBuyItemShopRuby;
 
-    private String indexBuyItemShopEnergy;
+    public String indexBuyItemShopEnergy;
 
-    private String indexBuyItemShopWorker;
+    public String indexBuyItemShopWorker;
 
-    private String indexBuyItemShopFruit;
+    public String indexBuyItemShopFruit;
 
-    private String indexBuyItemShopResources;
+    public String indexBuyItemShopResources;
     
-    private String indexBuyItemShopSales;
+    public String indexBuyItemShopSales;
 
 
-    private int clickAD;
+    public int clickAD;
 
-    private int successAD;
+    public int successAD;
 
-    private int errorAD;
+    public int errorAD;
     
 
-    private int clickDonate;
+    public int clickDonate;
 
-    private int successDonate;
+    public int successDonate;
 
-    private int redirectCount;
+    public int redirectCount;
 
-    private String typeClickDonate;
+    public String typeClickDonate;
 
-    private String timeClickDonate;
+    public String timeClickDonate;
 
-    private String timeSpawnClouds;
+    public String timeSpawnClouds;
 }
