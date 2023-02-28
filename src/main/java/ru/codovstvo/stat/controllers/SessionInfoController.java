@@ -16,7 +16,7 @@ import ru.codovstvo.stat.services.SessionInfoService;
 
 
 @RestController
-@RequestMapping(value = "back/sessioninfo")
+@RequestMapping(value = "stat/sessioninfo")
 public class SessionInfoController {
 
     // @Autowired
