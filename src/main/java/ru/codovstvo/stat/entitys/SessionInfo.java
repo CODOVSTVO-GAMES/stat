@@ -184,14 +184,14 @@ public class SessionInfo {
         this.countBuyItemShopSales = info.countBuyItemShopSales;
         this.countBuyItemShopOrder = info.countBuyItemShopOrder;
 
-        this.indexBuyItemShopMoney = arrayToString(info.indexBuyItemShopMoney);
-        this.clickBuyItemShopRuby = arrayToString(info.clickBuyItemShopRuby);
-        this.indexBuyItemShopRuby = arrayToString(info.indexBuyItemShopRuby);
-        this.indexBuyItemShopEnergy = arrayToString(info.indexBuyItemShopEnergy);
-        this.indexBuyItemShopWorker = arrayToString(info.indexBuyItemShopWorker);
-        this.indexBuyItemShopFruit = arrayToString(info.indexBuyItemShopFruit);
-        this.indexBuyItemShopResources = arrayToString(info.indexBuyItemShopResources);
-        this.indexBuyItemShopSales = arrayToString(info.indexBuyItemShopSales);
+        this.indexBuyItemShopMoney = intArrayToString(info.indexBuyItemShopMoney);
+        this.clickBuyItemShopRuby = intArrayToString(info.clickBuyItemShopRuby);
+        this.indexBuyItemShopRuby = intArrayToString(info.indexBuyItemShopRuby);
+        this.indexBuyItemShopEnergy = intArrayToString(info.indexBuyItemShopEnergy);
+        this.indexBuyItemShopWorker = intArrayToString(info.indexBuyItemShopWorker);
+        this.indexBuyItemShopFruit = intArrayToString(info.indexBuyItemShopFruit);
+        this.indexBuyItemShopResources = intArrayToString(info.indexBuyItemShopResources);
+        this.indexBuyItemShopSales = intArrayToString(info.indexBuyItemShopSales);
         
         this.clickAD = info.clickAD;
         this.successAD = info.successAD;
@@ -201,12 +201,24 @@ public class SessionInfo {
         this.successDonate = info.successDonate;
         this.redirectCount = info.redirectCount;
 
-        this.typeClickDonate = arrayToString(info.typeClickDonate);
-        this.timeClickDonate = arrayToString(info.timeClickDonate);
-        this.timeSpawnClouds = arrayToString(info.timeSpawnClouds);
+        this.typeClickDonate = stringArrayToString(info.typeClickDonate);
+        this.timeClickDonate = intArrayToString(info.timeClickDonate);
+        this.timeSpawnClouds = intArrayToString(info.timeSpawnClouds);
     }
 
-    public String arrayToString(int[] array){
+    public String intArrayToString(int[] array){
+        String str = new String();
+
+        if (array.length == 0) return "";
+
+        for(int i = 0; i < array.length; i++){
+            str = str + array[i] + "-";
+        }
+
+        return str;
+    }
+
+    public String stringArrayToString(String[] array){
         String str = new String();
 
         if (array.length == 0) return "";

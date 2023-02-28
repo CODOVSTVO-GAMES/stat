@@ -110,7 +110,7 @@ public class Info {
 
     public int redirectCount;
 
-    public int[] typeClickDonate;
+    public String[] typeClickDonate;
 
     public int[] timeClickDonate;
 
