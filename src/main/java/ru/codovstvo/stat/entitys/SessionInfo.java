@@ -4,14 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import lombok.Data;
 import ru.codovstvo.stat.Classes.Info;
-import ru.codovstvo.stat.services.Converters;
 
 @Data
 @Entity

@@ -25,11 +25,11 @@ public class SessionInfoService {
 
         SessionInfo newSessionInfo = new SessionInfo(info);
         
-        if (sessionInfoRepo.existsByUserIddAndCountSession(info.userId, info.countSeccion)) {
+        try{
             SessionInfo oldSessionInfo = sessionInfoRepo.findByUserIddAndCountSession(info.userId, info.countSeccion);
             Long id = oldSessionInfo.getId();
             newSessionInfo.setId(id);
-        }
+        }catch (Exception e) {System.out.println("Обьекта не существует");}
 
         sessionInfoRepo.save(newSessionInfo);
     }
