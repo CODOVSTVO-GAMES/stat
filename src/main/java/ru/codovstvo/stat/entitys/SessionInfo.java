@@ -98,29 +98,21 @@ public class SessionInfo {
 
     private String countBuyItemShopOrder;
 
-    @ElementCollection
-    private List<Integer> indexBuyItemShopMoney;
+    private String indexBuyItemShopMoney;
 
-    @ElementCollection
-    private List<Integer> clickBuyItemShopRuby;
+    private String clickBuyItemShopRuby;
 
-    @ElementCollection
-    private List<Integer> indexBuyItemShopRuby;
+    private String indexBuyItemShopRuby;
 
-    @ElementCollection
-    private List<Integer> indexBuyItemShopEnergy;
+    private String indexBuyItemShopEnergy;
 
-    @ElementCollection
-    private List<Integer> indexBuyItemShopWorker;
+    private String indexBuyItemShopWorker;
 
-    @ElementCollection
-    private List<Integer> indexBuyItemShopFruit;
+    private String indexBuyItemShopFruit;
 
-    @ElementCollection
-    private List<Integer> indexBuyItemShopResources;
+    private String indexBuyItemShopResources;
     
-    @ElementCollection
-    private List<Integer> indexBuyItemShopSales;
+    private String indexBuyItemShopSales;
 
 
     private int clickAD;
@@ -136,14 +128,11 @@ public class SessionInfo {
 
     private int redirectCount;
 
-    @ElementCollection
-    private List<String> typeClickDonate;
+    private String typeClickDonate;
 
-    @ElementCollection
-    private List<Integer> timeClickDonate;
+    private String timeClickDonate;
 
-    @ElementCollection
-    private List<Integer> timeSpawnClouds;
+    private String timeSpawnClouds;
 
     @Column(columnDefinition="TEXT")
     private String full;
