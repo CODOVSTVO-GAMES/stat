@@ -166,7 +166,7 @@ public class SessionInfo {
         this.countSession = info.countSeccion;
 
         this.mergeCountItems = info.mergeCountItems;
-        this.clickBank = info.clickBank;
+        // this.clickBank = info.clickBank;
 
         this.wastesMoney = info.wastesMoney;
         this.wastesRuby = info.wastesRuby;
