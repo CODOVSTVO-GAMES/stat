@@ -133,6 +133,7 @@ public class SessionInfo {
 
     private String timeClickDonate;
 
+    @Column(columnDefinition="TEXT")
     private String timeSpawnClouds;
 
     public SessionInfo(){}
