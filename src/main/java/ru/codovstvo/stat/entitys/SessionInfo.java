@@ -224,7 +224,7 @@ public class SessionInfo {
         this.timeSpawnCloudsText = intArrayToString(info.timeSpawnClouds);
 
         this.countCollectCloud = info.countCollectCloud;
-        this.countSpawnCloudText = info.countSpawnCloudText;
+        this.countSpawnCloudText = intArrayToString(info.countSpawnCloudText);
     }
 
     public String intArrayToString(int[] array){
