@@ -40,8 +40,7 @@ public class SessionInfo {
     @Column(columnDefinition="TEXT")
     private String mergeCountItems;//
 
-    @Nullable
-    private int clickBank;//
+    private Integer clickBank;//
 
 
     private int wastesMoney;
@@ -143,8 +142,7 @@ public class SessionInfo {
 
     private String timeSpawnClouds;
 
-    @Nullable
-    private int countCollectCloud;//
+    private Integer countCollectCloud;//
 
 
     @Column(columnDefinition="TEXT")
