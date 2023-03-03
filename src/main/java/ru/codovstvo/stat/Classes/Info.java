@@ -17,6 +17,11 @@ public class Info {
     public String lengthSeccion;
 
     public int countSeccion;
+    
+
+    public String mergeCountItems;
+
+    public int clickBank;
 
 
     public int wastesMoney;
@@ -117,4 +122,9 @@ public class Info {
     public int[] timeClickDonate;
 
     public int[] timeSpawnClouds;
+    
+
+    public int countCollectCloud;
+
+    public String countSpawnCloudText;
 }

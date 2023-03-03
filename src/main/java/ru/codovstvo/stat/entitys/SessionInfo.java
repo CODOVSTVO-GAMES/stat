@@ -36,6 +36,11 @@ public class SessionInfo {
 
     private int countSession;
 
+    @Column(columnDefinition="TEXT")
+    private String mergeCountItems;//
+
+    private int clickBank;//
+
 
     private int wastesMoney;
 
@@ -136,8 +141,15 @@ public class SessionInfo {
 
     private String timeSpawnClouds;
 
+    private int countCollectCloud;//
+
+
     @Column(columnDefinition="TEXT")
     private String timeSpawnCloudsText;
+
+    @Column(columnDefinition="TEXT")
+    private String countSpawnCloudText;//
+
 
     public SessionInfo(){}
 
@@ -152,6 +164,9 @@ public class SessionInfo {
         this.endTimeSession = info.endTimeSession;
         this.leghtSession = info.lengthSeccion;
         this.countSession = info.countSeccion;
+
+        this.mergeCountItems = info.mergeCountItems;
+        this.clickBank = info.clickBank;
 
         this.wastesMoney = info.wastesMoney;
         this.wastesRuby = info.wastesRuby;
@@ -207,6 +222,9 @@ public class SessionInfo {
         this.typeClickDonate = stringArrayToString(info.typeClickDonate);
         this.timeClickDonate = intArrayToString(info.timeClickDonate);
         this.timeSpawnCloudsText = intArrayToString(info.timeSpawnClouds);
+
+        this.countCollectCloud = info.countCollectCloud;
+        this.countSpawnCloudText = info.countSpawnCloudText;
     }
 
     public String intArrayToString(int[] array){
