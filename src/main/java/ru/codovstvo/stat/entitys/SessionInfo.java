@@ -145,6 +145,7 @@ public class SessionInfo {
     public SessionInfo(Info info)
     {
         this.platformUserId = info.userId;
+        this.platform = info.platform;
         this.startDateSession = info.startDataSession;
         this.startTimeSession = info.startTimeSession;
         this.endDateSession = info.endDataSession;

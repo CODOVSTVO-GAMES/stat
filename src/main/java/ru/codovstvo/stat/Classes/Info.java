@@ -4,6 +4,8 @@ public class Info {
 
     public String userId;
 
+    public String platform;
+
     public String startDataSession;
 
     public String startTimeSession;
