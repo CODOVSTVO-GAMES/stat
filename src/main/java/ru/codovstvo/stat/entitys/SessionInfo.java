@@ -134,8 +134,10 @@ public class SessionInfo {
 
     private String timeClickDonate;
 
-    @Column(columnDefinition="TEXT")
     private String timeSpawnClouds;
+
+    @Column(columnDefinition="TEXT")
+    private String timeSpawnCloudsText;
 
     public SessionInfo(){}
 
@@ -203,7 +205,7 @@ public class SessionInfo {
 
         this.typeClickDonate = stringArrayToString(info.typeClickDonate);
         this.timeClickDonate = intArrayToString(info.timeClickDonate);
-        this.timeSpawnClouds = intArrayToString(info.timeSpawnClouds);
+        this.timeSpawnCloudsText = intArrayToString(info.timeSpawnClouds);
     }
 
     public String intArrayToString(int[] array){
