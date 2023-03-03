@@ -16,6 +16,7 @@ public class SessionInfoService {
     SessionInfoRepo sessionInfoRepo;
 
     public void main(String reqString){
+        
         Info info = parseJsonToInfoClass(reqString);
 
         // System.out.println("----------------------");
