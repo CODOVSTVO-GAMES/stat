@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.lang.Nullable;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,6 +40,7 @@ public class SessionInfo {
     @Column(columnDefinition="TEXT")
     private String mergeCountItems;//
 
+    @Nullable
     private int clickBank;//
 
 
@@ -141,6 +143,7 @@ public class SessionInfo {
 
     private String timeSpawnClouds;
 
+    @Nullable
     private int countCollectCloud;//
 
 
