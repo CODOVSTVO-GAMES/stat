@@ -6,4 +6,5 @@ import ru.codovstvo.stat.entitys.SessionInfo;
 
 public interface SessionInfoRepo extends CrudRepository<SessionInfo, Long> {
     SessionInfo findByPlatformUserIdAndCountSession(String platformUserId, int CountSession);
+    boolean deleteAllBylatformUserId(String platformUserId);
 }
