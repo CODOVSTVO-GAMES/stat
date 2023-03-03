@@ -20,7 +20,7 @@ public class AutoService {
         System.out.println("Запущено удаление логов админов");
 
         for(int i = 0; i < admins.length; i++){
-            sessionInfoRepo.deleteAllBylatformUserId(Long.toString(admins[i]));
+            sessionInfoRepo.deleteAllByPlatformUserId(Long.toString(admins[i]));
         }
     }
 
