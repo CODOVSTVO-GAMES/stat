@@ -115,6 +115,4 @@ public class Info {
     public int[] timeClickDonate;
 
     public int[] timeSpawnClouds;
-
-    public String testField;
 }

@@ -21,6 +21,8 @@ public class SessionInfo {
 
     private String platformUserId;
 
+    private String platform;
+
 
     private String startDateSession;
 
@@ -133,9 +135,6 @@ public class SessionInfo {
     private String timeClickDonate;
 
     private String timeSpawnClouds;
-
-    @Column(columnDefinition="TEXT")
-    private String fullData;
 
     public SessionInfo(){}
 
