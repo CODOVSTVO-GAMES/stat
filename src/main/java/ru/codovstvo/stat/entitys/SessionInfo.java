@@ -1,5 +1,6 @@
 package ru.codovstvo.stat.entitys;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
