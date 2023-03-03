@@ -122,9 +122,9 @@ public class Info {
     public int[] timeClickDonate;
 
     public int[] timeSpawnClouds;
-    
+
 
     public int countCollectCloud;
 
-    public String countSpawnCloudText;
+    public int[] countSpawnCloudText;
 }
