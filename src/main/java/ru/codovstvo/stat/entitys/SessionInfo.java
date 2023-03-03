@@ -223,7 +223,7 @@ public class SessionInfo {
         this.timeClickDonate = intArrayToString(info.timeClickDonate);
         this.timeSpawnCloudsText = intArrayToString(info.timeSpawnClouds);
 
-        this.countCollectCloud = info.countCollectCloud;
+        // this.countCollectCloud = info.countCollectCloud;
         this.countSpawnCloudText = intArrayToString(info.countSpawnCloudText);
     }
 
