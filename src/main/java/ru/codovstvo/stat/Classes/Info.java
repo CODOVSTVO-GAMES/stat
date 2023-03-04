@@ -21,7 +21,7 @@ public class Info {
 
     public String mergeCountItems;
 
-    public int clickBank;
+    public int clickBank = 0;
 
 
     public int wastesMoney;
@@ -124,7 +124,7 @@ public class Info {
     public int[] timeSpawnClouds;
 
 
-    public int countCollectCloud;
+    public int countCollectCloud = 0;
 
     public int[] countSpawnCloudText;
 }
