@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.springframework.lang.Nullable;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -166,8 +164,8 @@ public class SessionInfo {
         this.leghtSession = info.lengthSeccion;
         this.countSession = info.countSeccion;
 
-        // this.mergeCountItems = info.mergeCountItems;
-        // this.clickBank = info.clickBank;
+        this.mergeCountItems = info.mergeCountItems;
+        this.clickBank = info.clickBank;
 
         this.wastesMoney = info.wastesMoney;
         this.wastesRuby = info.wastesRuby;
@@ -224,8 +222,8 @@ public class SessionInfo {
         this.timeClickDonate = intArrayToString(info.timeClickDonate);
         this.timeSpawnCloudsText = intArrayToString(info.timeSpawnClouds);
 
-        // this.countCollectCloud = info.countCollectCloud;
-        // this.countSpawnCloudText = intArrayToString(info.countSpawnCloudText);
+        this.countCollectCloud = info.countCollectCloud;
+        this.countSpawnCloudText = intArrayToString(info.countSpawnCloudText);
     }
 
     public String intArrayToString(int[] array){
