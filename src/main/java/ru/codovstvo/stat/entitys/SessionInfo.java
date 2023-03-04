@@ -164,7 +164,7 @@ public class SessionInfo {
         this.leghtSession = info.lengthSeccion;
         this.countSession = info.countSeccion;
 
-        this.mergeCountItems = info.mergeCountItems;
+        this.mergeCountItems = intArrayToString(info.mergeCountItems);
         this.clickBank = info.clickBank;
 
         this.wastesMoney = info.wastesMoney;

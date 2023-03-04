@@ -19,7 +19,7 @@ public class Info {
     public int countSeccion;
     
 
-    public String mergeCountItems = "";
+    public int[] mergeCountItems = new int[];
 
     public int clickBank = 0;
 
