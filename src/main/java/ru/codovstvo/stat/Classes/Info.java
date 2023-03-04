@@ -19,7 +19,7 @@ public class Info {
     public int countSeccion;
     
 
-    public String mergeCountItems;
+    public String mergeCountItems = "";
 
     public int clickBank = 0;
 
@@ -126,5 +126,5 @@ public class Info {
 
     public int countCollectCloud = 0;
 
-    public int[] countSpawnCloudText;
+    public int[] countSpawnCloudText = new int[0];
 }

@@ -140,14 +140,14 @@ public class SessionInfo {
 
     private String timeSpawnClouds;
 
-    private Integer countCollectCloud;//
+    private Integer countCollectCloud;
 
 
     @Column(columnDefinition="TEXT")
     private String timeSpawnCloudsText;
 
     @Column(columnDefinition="TEXT")
-    private String countSpawnCloudText;//
+    private String countSpawnCloudText;
 
 
     public SessionInfo(){}
