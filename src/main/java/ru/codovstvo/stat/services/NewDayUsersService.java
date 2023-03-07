@@ -15,15 +15,26 @@ import org.springframework.stereotype.Service;
 import ru.codovstvo.stat.repo.SessionInfoRepo;
 import ru.codovstvo.stat.entitys.SessionInfo;
 
+import ru.codovstvo.stat.SystemClasses.*;
+
 @Service
 public class NewDayUsersService {
 
     @Autowired
     SessionInfoRepo sessionInfoRepo;
 
-    // public Map<LocalDate, Integer> getUsersInDay(){
+    public List<DateInfo> getUsersInDay(){
+        List<LocalDate> dates = getDatesInfo();
 
-    // }
+        List<DateInfo> dateInfoArray = new ArrayList<DateInfo>();
+        for (LocalDate d : dates){
+            String date = dateToString(d);
+
+            dateInfoArray.add(new DateInfo(date, sessionInfoRepo.countByStartDateSessionAndCountSession(date, 1)));
+        }
+
+        return dateInfoArray;
+    }
     
     public List<LocalDate> getDatesInfo(){
 

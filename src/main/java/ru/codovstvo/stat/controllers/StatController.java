@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
 import ru.codovstvo.stat.services.NewDayUsersService;
+import ru.codovstvo.stat.SystemClasses.*;
 
 
 @RestController
@@ -24,9 +25,9 @@ public class StatController {
     NewDayUsersService newDayUsersService;
     
     @GetMapping("get")
-    public List<LocalDate> get1() {
+    public List<DateInfo> get1() {
         // System.out.println(requestBody);
-        return newDayUsersService.getDatesInfo();
+        return newDayUsersService.getUsersInDay();
     }
-    
+
 }
