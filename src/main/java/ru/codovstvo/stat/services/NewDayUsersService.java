@@ -53,7 +53,7 @@ public class NewDayUsersService {
 
         System.out.println("dsdfdfdsd " + buffer);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         return LocalDate.parse(buffer, formatter);
     }
