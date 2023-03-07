@@ -47,7 +47,7 @@ public class NewDayUsersService {
         long sessionLength = 0l;
 
         for (SessionInfo s : array ){
-            sessionLength =+ Long.parseLong(s.getLeghtSession());
+            sessionLength += Long.parseLong(s.getLeghtSession());
         }
 
         return sessionLength / array.size();
