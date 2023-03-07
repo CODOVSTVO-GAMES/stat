@@ -48,7 +48,17 @@ public class NewDayUsersService {
         for (LocalDate d : dates){
             String date = dateToString(d);
 
-            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSession(date);            
+            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSession(date);
+            
+            Set<String> users = new HashSet<String>();
+
+            for (SessionInfo s : sessions){
+                if (!users.contains(s.getPlatformUserId())){
+                    users.add(s.getPlatformUserId());
+                }else{
+                    sessions.remove(s);
+                }
+            }
 
             dateInfoArray.add(new DateInfo(date,
                                             sessions.size(),
@@ -141,7 +151,6 @@ public class NewDayUsersService {
 
     private String dateToString(LocalDate date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
-        System.out.println(date.format(formatter));
         return date.format(formatter);
     }
 
