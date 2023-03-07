@@ -33,9 +33,10 @@ public class NewDayUsersService {
     }
 
     private LocalDate parseDate(String strDate){
+        System.out.println("dsd" + strDate);
         String[] arr = strDate.split(".");
         String buffer = new String();
-        
+
         for (String s : arr){
             if (s.length() == 1){
                 buffer = buffer + "0" + s + "-";
@@ -45,11 +46,11 @@ public class NewDayUsersService {
             }
         }
 
-        System.out.println(buffer);
+        System.out.println("dsdsd" + buffer);
 
         buffer = buffer.substring(0, buffer.length() - 1);
 
-        System.out.println(buffer);
+        System.out.println("dsdfdfdsd" + buffer);
 
         return LocalDate.parse(buffer);
     }
