@@ -26,7 +26,7 @@ public class NewDayUsersService {
 
         for (SessionInfo sessionInfo : allData){
             // dates.add(sessionInfo.getStartDateSession());
-            dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-")));
+            dates.add(parseDate(sessionInfo.getStartDateSession()));
         }
         
         return dates;
