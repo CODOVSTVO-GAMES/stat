@@ -5,7 +5,6 @@ import java.time.LocalDate;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -23,7 +22,7 @@ public class NewDayUsersService {
     @Autowired
     SessionInfoRepo sessionInfoRepo;
 
-    public List<DateInfo> getUsersInDay(){
+    public List<DateInfo> getNewUsersInDay(){
         List<LocalDate> dates = getDatesInfo();
 
         List<DateInfo> dateInfoArray = new ArrayList<DateInfo>();
@@ -31,6 +30,25 @@ public class NewDayUsersService {
             String date = dateToString(d);
 
             List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSessionAndCountSession(date, 1);            
+
+            dateInfoArray.add(new DateInfo(date,
+                                            sessions.size(),
+                                            lengthVKUsers(sessions),
+                                            lengthOKUsers(sessions),
+                                            lengthYAUsers(sessions)));
+        }
+
+        return dateInfoArray;
+    }
+
+    public List<DateInfo> getUsersInDay(){
+        List<LocalDate> dates = getDatesInfo();
+
+        List<DateInfo> dateInfoArray = new ArrayList<DateInfo>();
+        for (LocalDate d : dates){
+            String date = dateToString(d);
+
+            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSession(date);            
 
             dateInfoArray.add(new DateInfo(date,
                                             sessions.size(),

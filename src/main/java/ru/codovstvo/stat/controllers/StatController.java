@@ -29,5 +29,16 @@ public class StatController {
         // System.out.println(requestBody);
         return newDayUsersService.getUsersInDay();
     }
+    
+    //Готовы --->
+    @GetMapping("newusersinday")
+    public List<DateInfo> getNewUsersInDay() {
+        return newDayUsersService.getNewUsersInDay();
+    }
+
+    @GetMapping("usersinday")
+    public List<DateInfo> getUsersInDay() {
+        return newDayUsersService.getUsersInDay();
+    }
 
 }
