@@ -31,4 +31,24 @@ public class NewDayUsersService {
         
         return dates;
     }
+
+    private LocalDate parseDate(String strDate){
+        String[] arr = strDate.split(".");
+        String buffer = new String();
+        for (String s : arr){
+            if (s.length() == 1){
+                buffer = buffer + "0" + s + "-";
+            }
+            else{
+                buffer = buffer + s + "-";
+            }
+        }
+
+        buffer = buffer.substring(0, buffer.length() - 1);
+
+        System.out.println(buffer);
+
+        return LocalDate.parse(buffer);
+    }
+
 }
