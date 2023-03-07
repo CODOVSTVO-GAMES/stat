@@ -22,6 +22,46 @@ public class NewDayUsersService {
     @Autowired
     SessionInfoRepo sessionInfoRepo;
 
+    public List<DateInfo> getSessionLengthInDay(){
+        List<LocalDate> dates = getDatesInfo();
+
+        List<DateInfo> dateInfoArray = new ArrayList<DateInfo>();
+
+        for (LocalDate d : dates){
+            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSession(dateToString(d));
+
+            //получить среднюю длинну по платформам
+            dateInfoArray.add(new DateInfo(dateToString(d),
+                                            lengthAverageSession(sessions),
+                                            lengthAverageSession(getVKSessionInfo(sessions)),
+                                            lengthAverageSession(getOKSessionInfo(sessions)),
+                                            lengthAverageSession(getYASessionInfo(sessions))
+                                            ));
+        }
+        
+        return dateInfoArray;
+    }
+
+    private long lengthAverageSession(List<SessionInfo> array){
+        long sessionLength = 0l;
+
+        for (SessionInfo s : array ){
+            sessionLength =+ Long.parseLong(s.getLeghtSession());
+        }
+
+        return sessionLength / array.size();
+    }
+
+    private Set<String> getUniqueUsers(List<SessionInfo> array){
+        Set<String> users = new HashSet<String>();
+        for (SessionInfo s : array){
+            if (!users.contains(s.getPlatformUserId())){
+                users.add(s.getPlatformUserId());
+            }else{}
+        }
+        return users;
+    }    
+
     public List<DateInfo> getNewUsersInDay(){
         List<LocalDate> dates = getDatesInfo();
 
@@ -33,9 +73,10 @@ public class NewDayUsersService {
 
             dateInfoArray.add(new DateInfo(date,
                                             sessions.size(),
-                                            lengthVKUsers(sessions),
-                                            lengthOKUsers(sessions),
-                                            lengthYAUsers(sessions)));
+                                            getVKSessionInfo(sessions).size(),
+                                            getOKSessionInfo(sessions).size(),
+                                            getYASessionInfo(sessions).size()
+                                            ));
         }
 
         return dateInfoArray;
@@ -52,9 +93,10 @@ public class NewDayUsersService {
             
             dateInfoArray.add(new DateInfo(date,
                                             sessions.size(),
-                                            lengthVKUsers(sessions),
-                                            lengthOKUsers(sessions),
-                                            lengthYAUsers(sessions)));
+                                            getVKSessionInfo(sessions).size(),
+                                            getOKSessionInfo(sessions).size(),
+                                            getYASessionInfo(sessions).size()
+                                            ));
         }
 
         return dateInfoArray;
@@ -71,36 +113,6 @@ public class NewDayUsersService {
             }else{}
         }
         return pureSessions;
-    }
-
-    private int lengthVKUsers(List<SessionInfo> sessions){
-        int count = 0;
-        for (SessionInfo s : sessions){
-            if(s.getPlatformUserId().length() < 10){
-                count += 1;
-            }
-        }
-        return count;
-    }
-
-    private int lengthOKUsers(List<SessionInfo> sessions){
-        int count = 0;
-        for (SessionInfo s : sessions){
-            if(s.getPlatformUserId().length() > 10 && s.getPlatformUserId().length() < 14){
-                count += 1;
-            }
-        }
-        return count;
-    }
-
-    private int lengthYAUsers(List<SessionInfo> sessions){
-        int count = 0;
-        for (SessionInfo s : sessions){
-            if(s.getPlatformUserId().length() > 14){
-                count += 1;
-            }
-        }
-        return count;
     }
     
     public List<LocalDate> getDatesInfo(){
@@ -155,6 +167,36 @@ public class NewDayUsersService {
     private String dateToString(LocalDate date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
         return date.format(formatter);
+    }
+
+    private List<SessionInfo> getVKSessionInfo(List<SessionInfo> array){
+        List<SessionInfo> platformArray = new ArrayList<SessionInfo>();
+        for (SessionInfo s : array){
+            if(s.getPlatformUserId().length() < 10){
+                platformArray.add(s);
+            }
+        }
+        return platformArray;
+    }
+
+    private List<SessionInfo> getOKSessionInfo(List<SessionInfo> array){
+        List<SessionInfo> platformArray = new ArrayList<SessionInfo>();
+        for (SessionInfo s : array){
+            if(s.getPlatformUserId().length() > 10 && s.getPlatformUserId().length() < 14){
+                platformArray.add(s);
+            }
+        }
+        return platformArray;
+    }
+
+    private List<SessionInfo> getYASessionInfo(List<SessionInfo> array){
+        List<SessionInfo> platformArray = new ArrayList<SessionInfo>();
+        for (SessionInfo s : array){
+            if(s.getPlatformUserId().length() > 14){
+                platformArray.add(s);
+            }
+        }
+        return platformArray;
     }
 
 }

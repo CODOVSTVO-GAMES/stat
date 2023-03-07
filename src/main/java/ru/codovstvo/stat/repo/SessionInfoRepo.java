@@ -15,4 +15,6 @@ public interface SessionInfoRepo extends CrudRepository<SessionInfo, Long> {
     List<SessionInfo> findAllByStartDateSessionAndCountSession(String date, int count);
 
     List<SessionInfo> findAllByStartDateSession(String date);
+
+    List<SessionInfo> findAllByPlatformUserIdAndStartDateSession(String id, String date);
 }
