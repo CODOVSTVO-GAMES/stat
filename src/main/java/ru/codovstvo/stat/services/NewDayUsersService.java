@@ -48,18 +48,8 @@ public class NewDayUsersService {
         for (LocalDate d : dates){
             String date = dateToString(d);
 
-            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSession(date);
+            List<SessionInfo> sessions = clearDublicateUsers(sessionInfoRepo.findAllByStartDateSession(date));
             
-            Set<String> users = new HashSet<String>();
-
-            for (SessionInfo s : sessions){
-                if (!users.contains(s.getPlatformUserId())){
-                    users.add(s.getPlatformUserId());
-                }else{
-                    sessions.remove(s);
-                }
-            }
-
             dateInfoArray.add(new DateInfo(date,
                                             sessions.size(),
                                             lengthVKUsers(sessions),
@@ -68,6 +58,19 @@ public class NewDayUsersService {
         }
 
         return dateInfoArray;
+    }
+
+    private List<SessionInfo> clearDublicateUsers(List<SessionInfo> array){
+        Set<String> users = new HashSet<String>();
+        List<SessionInfo> pureSessions = new ArrayList<SessionInfo>();
+
+        for (SessionInfo s : array){
+            if (!users.contains(s.getPlatformUserId())){
+                users.add(s.getPlatformUserId());
+                pureSessions.add(s);
+            }else{}
+        }
+        return pureSessions;
     }
 
     private int lengthVKUsers(List<SessionInfo> sessions){
