@@ -82,7 +82,16 @@ public class NewDayUsersService {
         System.out.println(array.size() / getUniqueUsers(array).size());
         System.out.println("----");
 
-        return array.size() / getUniqueUsers(array).size();
+        float num1 = array.size();
+        float num2 = getUniqueUsers(array).size();
+
+        System.out.println("----");
+        System.out.println(num1);
+        System.out.println(num2);
+        System.out.println(num1 / num2);
+        System.out.println("----");
+
+        return num1 / num2;
     }
 
     private Set<String> getUniqueUsers(List<SessionInfo> array){
