@@ -30,7 +30,8 @@ public class SessionInfoService {
             SessionInfo oldSessionInfo = sessionInfoRepo.findByPlatformUserIdAndCountSession(info.userId, info.countSeccion);
             long id = oldSessionInfo.getId();
             newSessionInfo.setId(id);
-        }catch (Exception e) {System.out.println("Обьекта не существует");}
+            System.out.println("Обьект существует, обновляем");
+        }catch (Exception e) {System.out.println("Обьекта не существует " + info.userId +" ----- " + info.countSeccion);}
 
         sessionInfoRepo.save(newSessionInfo);
     }
