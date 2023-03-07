@@ -43,6 +43,7 @@ public class NewDayUsersService {
     }
 
     private long lengthAverageSession(List<SessionInfo> array){
+        if(array.size() == 0) return 0;
         long sessionLength = 0l;
 
         for (SessionInfo s : array ){
