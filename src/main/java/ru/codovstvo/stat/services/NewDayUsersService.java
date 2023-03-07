@@ -75,6 +75,13 @@ public class NewDayUsersService {
 
     private float countNumberSession(List<SessionInfo> array){
         if(array.size() == 0) return 0;
+
+        System.out.println("----");
+        System.out.println(array.size());
+        System.out.println(array.size());
+        System.out.println(array.size() / getUniqueUsers(array).size());
+        System.out.println("----");
+
         return array.size() / getUniqueUsers(array).size();
     }
 
