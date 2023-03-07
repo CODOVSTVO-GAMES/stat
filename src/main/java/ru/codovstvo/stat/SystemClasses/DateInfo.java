@@ -4,15 +4,15 @@ public class DateInfo {
 
     public String date;
     
-    public long totalNumber;
+    public float totalNumber;
 
-    public long VKNumber;
+    public float VKNumber;
     
-    public long OKNumber;
+    public float OKNumber;
 
-    public long YANumber;
+    public float YANumber;
 
-    public DateInfo(String date, long totalNumber, long VKNumber, long OKNumber, long YANumber){
+    public DateInfo(String date, float totalNumber, float VKNumber, float OKNumber, float YANumber){
         this.date = date;
         this.totalNumber = totalNumber;
         this.VKNumber = VKNumber;

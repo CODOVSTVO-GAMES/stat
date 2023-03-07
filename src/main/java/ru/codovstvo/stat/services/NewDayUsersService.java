@@ -73,7 +73,7 @@ public class NewDayUsersService {
         return sessionLength / array.size();
     }
 
-    private long countNumberSession(List<SessionInfo> array){
+    private float countNumberSession(List<SessionInfo> array){
         if(array.size() == 0) return 0;
         return array.size() / getUniqueUsers(array).size();
     }
