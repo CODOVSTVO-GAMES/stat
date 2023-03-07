@@ -2,6 +2,7 @@ package ru.codovstvo.stat.controllers;
 
 import java.time.LocalDate;
 import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +26,7 @@ public class StatController {
     NewDayUsersService newDayUsersService;
     
     @GetMapping("get")
-    public Set<LocalDate> get1() {
+    public List<LocalDate> get1() {
         // System.out.println(requestBody);
         return newDayUsersService.getNumberUsers();
     }

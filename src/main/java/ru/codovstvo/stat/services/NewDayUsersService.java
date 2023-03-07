@@ -2,12 +2,14 @@ package ru.codovstvo.stat.services;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
+import java.util.Comparator;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,21 +23,32 @@ public class NewDayUsersService {
     @Autowired
     SessionInfoRepo sessionInfoRepo;
     
-    public Set<LocalDate> getNumberUsers(){
-        //получить данные за последние n дней
+    public List<LocalDate> getNumberUsers(){
+
         Set<LocalDate> dates = new HashSet<LocalDate>();
         List<SessionInfo> allData = sessionInfoRepo.findAll();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         for (SessionInfo sessionInfo : allData){
-            // System.out.println("----: " + sessionInfo.getStartDateSession().replace(".", "-"));
-
-            // dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
-            
             dates.add(parseDate(sessionInfo.getStartDateSession()));
         }
-        
-        return dates;
+
+        List<LocalDate> localDates = new ArrayList<LocalDate>(dates);
+
+        List<LocalDate> sortedLocalDates = new ArrayList<LocalDate>();
+
+        while(localDates.size() > 1){
+            LocalDate bufferDate = localDates.get(0);
+            for (int i = 1; i < localDates.size(); i++){
+                if (bufferDate.isAfter(localDates.get(i))) {
+                    bufferDate = localDates.get(i);
+                }
+            }
+            sortedLocalDates.add(bufferDate);
+            localDates.remove(bufferDate);
+        }
+        sortedLocalDates.add(localDates.get(0));
+
+        return sortedLocalDates;
     }
 
     private LocalDate parseDate(String strDate){
@@ -51,14 +64,12 @@ public class NewDayUsersService {
                 buffer = buffer + s + "-";
             }
         }
-
         buffer = buffer.substring(0, buffer.length() - 1);
-
-        System.out.println("dsdfdfdsd " + buffer);
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         return LocalDate.parse(buffer, formatter);
     }
+
+
 
 }
