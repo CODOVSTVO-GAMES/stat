@@ -1,7 +1,10 @@
 package ru.codovstvo.stat.services;
 
+import java.time.LocalDate;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +19,14 @@ public class NewDayUsersService {
     @Autowired
     SessionInfoRepo sessionInfoRepo;
     
-    public Set<String> getNumberUsers(){
+    public Set<LocalDate> getNumberUsers(){
         //получить данные за последние n дней
-        Set<String> dates = new HashSet<String>();
+        Set<LocalDate> dates = new HashSet<LocalDate>();
         List<SessionInfo> allData = sessionInfoRepo.findAll();
 
         for (SessionInfo sessionInfo : allData){
-            dates.add(sessionInfo.getStartDateSession());
+            // dates.add(sessionInfo.getStartDateSession());
+            dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-")));
         }
         
         return dates;

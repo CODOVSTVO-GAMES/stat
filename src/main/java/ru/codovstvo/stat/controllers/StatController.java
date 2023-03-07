@@ -1,5 +1,6 @@
 package ru.codovstvo.stat.controllers;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class StatController {
     NewDayUsersService newDayUsersService;
     
     @GetMapping("get")
-    public Set<String> get1() {
+    public Set<LocalDate> get1() {
         // System.out.println(requestBody);
         return newDayUsersService.getNumberUsers();
     }
