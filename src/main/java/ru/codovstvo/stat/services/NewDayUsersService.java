@@ -75,7 +75,7 @@ public class NewDayUsersService {
     }
 
     private String dateToString(LocalDate date){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
         System.out.println(date.format(formatter));
         return date.format(formatter);
     }
