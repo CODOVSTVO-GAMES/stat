@@ -36,6 +36,7 @@ public class NewDayUsersService {
         System.out.println("dsd " + strDate);
 
         String[] arr = strDate.split(".");
+        System.out.println("dsdsds " + arr.length);
 
         String buffer = new String();
 
