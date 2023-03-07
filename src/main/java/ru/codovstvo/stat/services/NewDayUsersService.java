@@ -22,6 +22,26 @@ public class NewDayUsersService {
     @Autowired
     SessionInfoRepo sessionInfoRepo;
 
+    public List<DateInfo> getAverageCountSessionByUser(){
+        List<LocalDate> dates = getDatesInfo();
+
+        List<DateInfo> dateInfoArray = new ArrayList<DateInfo>();
+
+        for (LocalDate d : dates){
+            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSession(dateToString(d));
+
+            //получить среднюю длинну по платформам
+            dateInfoArray.add(new DateInfo(dateToString(d),
+                                            countNumberSession(sessions),
+                                            countNumberSession(getVKSessionInfo(sessions)),
+                                            countNumberSession(getOKSessionInfo(sessions)),
+                                            countNumberSession(getYASessionInfo(sessions))
+                                            ));
+        }
+
+        return dateInfoArray;
+    }
+
     public List<DateInfo> getSessionLengthInDay(){
         List<LocalDate> dates = getDatesInfo();
 
@@ -53,15 +73,20 @@ public class NewDayUsersService {
         return sessionLength / array.size();
     }
 
-    // private Set<String> getUniqueUsers(List<SessionInfo> array){
-    //     Set<String> users = new HashSet<String>();
-    //     for (SessionInfo s : array){
-    //         if (!users.contains(s.getPlatformUserId())){
-    //             users.add(s.getPlatformUserId());
-    //         }else{}
-    //     }
-    //     return users;
-    // }    
+    private long countNumberSession(List<SessionInfo> array){
+        if(array.size() == 0) return 0;
+        return array.size() / getUniqueUsers(array).size();
+    }
+
+    private Set<String> getUniqueUsers(List<SessionInfo> array){
+        Set<String> users = new HashSet<String>();
+        for (SessionInfo s : array){
+            if (!users.contains(s.getPlatformUserId())){
+                users.add(s.getPlatformUserId());
+            }else{}
+        }
+        return users;
+    }    
 
     public List<DateInfo> getNewUsersInDay(){
         List<LocalDate> dates = getDatesInfo();
