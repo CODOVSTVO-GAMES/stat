@@ -30,10 +30,46 @@ public class NewDayUsersService {
         for (LocalDate d : dates){
             String date = dateToString(d);
 
-            dateInfoArray.add(new DateInfo(date, sessionInfoRepo.countByStartDateSessionAndCountSession(date, 1)));
+            List<SessionInfo> sessions = sessionInfoRepo.findAllByStartDateSessionAndCountSession(date, 1);            
+
+            dateInfoArray.add(new DateInfo(date,
+                                            sessions.size(),
+                                            lengthVKUsers(sessions),
+                                            lengthOKUsers(sessions),
+                                            lengthYAUsers(sessions)));
         }
 
         return dateInfoArray;
+    }
+
+    private int lengthVKUsers(List<SessionInfo> sessions){
+        int count = 0;
+        for (SessionInfo s : sessions){
+            if(s.getPlatformUserId().length() < 10){
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    private int lengthOKUsers(List<SessionInfo> sessions){
+        int count = 0;
+        for (SessionInfo s : sessions){
+            if(s.getPlatformUserId().length() > 10 && s.getPlatformUserId().length() < 14){
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    private int lengthYAUsers(List<SessionInfo> sessions){
+        int count = 0;
+        for (SessionInfo s : sessions){
+            if(s.getPlatformUserId().length() > 14){
+                count += 1;
+            }
+        }
+        return count;
     }
     
     public List<LocalDate> getDatesInfo(){
