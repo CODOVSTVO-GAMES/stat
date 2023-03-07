@@ -1,7 +1,6 @@
 package ru.codovstvo.stat.repo;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,4 +11,6 @@ public interface SessionInfoRepo extends CrudRepository<SessionInfo, Long> {
     boolean deleteAllByPlatformUserId(String platformUserId);
     // Set<String> findAllStartDateSessionDistinct();
     List<SessionInfo> findAll();
+
+    List<SessionInfo> findAllByStartDateSessionAndCountSession(String date, int count);
 }

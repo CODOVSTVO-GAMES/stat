@@ -2,12 +2,10 @@ package ru.codovstvo.stat.services;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
-import java.util.Comparator;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.SortedSet;
+import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -22,14 +20,18 @@ public class NewDayUsersService {
 
     @Autowired
     SessionInfoRepo sessionInfoRepo;
+
+    // public Map<LocalDate, Integer> getUsersInDay(){
+
+    // }
     
-    public List<LocalDate> getNumberUsers(){
+    public List<LocalDate> getDatesInfo(){
 
         Set<LocalDate> dates = new HashSet<LocalDate>();
         List<SessionInfo> allData = sessionInfoRepo.findAll();
 
         for (SessionInfo sessionInfo : allData){
-            dates.add(parseDate(sessionInfo.getStartDateSession()));
+            dates.add(stringToDate(sessionInfo.getStartDateSession()));
         }
 
         List<LocalDate> localDates = new ArrayList<LocalDate>(dates);
@@ -48,10 +50,12 @@ public class NewDayUsersService {
         }
         sortedLocalDates.add(localDates.get(0));
 
+        dateToString(localDates.get(0));
+
         return sortedLocalDates;
     }
 
-    private LocalDate parseDate(String strDate){
+    private LocalDate stringToDate(String strDate){
         String[] arr = strDate.split("\\.");
 
         String buffer = new String();
@@ -70,6 +74,10 @@ public class NewDayUsersService {
         return LocalDate.parse(buffer, formatter);
     }
 
-
+    private String dateToString(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        System.out.println(date.format(formatter));
+        return date.format(formatter);
+    }
 
 }

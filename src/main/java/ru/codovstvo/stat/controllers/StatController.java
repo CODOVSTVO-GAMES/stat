@@ -1,7 +1,6 @@
 package ru.codovstvo.stat.controllers;
 
 import java.time.LocalDate;
-import java.util.Set;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
-import ru.codovstvo.stat.repo.SessionInfoRepo;
 import ru.codovstvo.stat.services.NewDayUsersService;
 
 
@@ -28,6 +26,7 @@ public class StatController {
     @GetMapping("get")
     public List<LocalDate> get1() {
         // System.out.println(requestBody);
-        return newDayUsersService.getNumberUsers();
+        return newDayUsersService.getDatesInfo();
     }
+    
 }
