@@ -27,10 +27,11 @@ public class StatController {
     @GetMapping("get")
     public List<DateInfo> get1() {
         // System.out.println(requestBody);
-        return newDayUsersService.getUsersInDay();
+        return newDayUsersService.getSessionLengthInDay();
     }
     
     //Готовы --->
+
     @GetMapping("newusersinday")
     public List<DateInfo> getNewUsersInDay() {
         return newDayUsersService.getNewUsersInDay();

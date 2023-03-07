@@ -38,7 +38,7 @@ public class NewDayUsersService {
                                             lengthAverageSession(getYASessionInfo(sessions))
                                             ));
         }
-        
+
         return dateInfoArray;
     }
 
@@ -52,15 +52,15 @@ public class NewDayUsersService {
         return sessionLength / array.size();
     }
 
-    private Set<String> getUniqueUsers(List<SessionInfo> array){
-        Set<String> users = new HashSet<String>();
-        for (SessionInfo s : array){
-            if (!users.contains(s.getPlatformUserId())){
-                users.add(s.getPlatformUserId());
-            }else{}
-        }
-        return users;
-    }    
+    // private Set<String> getUniqueUsers(List<SessionInfo> array){
+    //     Set<String> users = new HashSet<String>();
+    //     for (SessionInfo s : array){
+    //         if (!users.contains(s.getPlatformUserId())){
+    //             users.add(s.getPlatformUserId());
+    //         }else{}
+    //     }
+    //     return users;
+    // }    
 
     public List<DateInfo> getNewUsersInDay(){
         List<LocalDate> dates = getDatesInfo();
