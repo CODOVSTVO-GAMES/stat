@@ -25,11 +25,12 @@ public class NewDayUsersService {
         //получить данные за последние n дней
         Set<LocalDate> dates = new HashSet<LocalDate>();
         List<SessionInfo> allData = sessionInfoRepo.findAll();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         for (SessionInfo sessionInfo : allData){
-            // dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
+            dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
             
-            dates.add(parseDate(sessionInfo.getStartDateSession()));
+            // dates.add(parseDate(sessionInfo.getStartDateSession()));
         }
         
         return dates;
