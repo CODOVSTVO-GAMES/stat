@@ -78,7 +78,7 @@ public class NewDayUsersService {
 
         System.out.println("----");
         System.out.println(array.size());
-        System.out.println(array.size());
+        System.out.println(getUniqueUsers(array).size());
         System.out.println(array.size() / getUniqueUsers(array).size());
         System.out.println("----");
 
