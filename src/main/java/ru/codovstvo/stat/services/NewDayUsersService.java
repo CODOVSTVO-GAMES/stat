@@ -25,37 +25,37 @@ public class NewDayUsersService {
         //получить данные за последние n дней
         Set<LocalDate> dates = new HashSet<LocalDate>();
         List<SessionInfo> allData = sessionInfoRepo.findAll();
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
         for (SessionInfo sessionInfo : allData){
-            dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
+            // dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
             
-            // dates.add(parseDate(sessionInfo.getStartDateSession()));
+            dates.add(parseDate(sessionInfo.getStartDateSession()));
         }
         
         return dates;
     }
 
-    // private LocalDate parseDate(String strDate){
-    //     String[] arr = strDate.split("\\.");
+    private LocalDate parseDate(String strDate){
+        String[] arr = strDate.split("\\.");
 
-    //     String buffer = new String();
+        String buffer = new String();
 
-    //     for (String s : arr){
-    //         if (s.length() == 1){
-    //             buffer = buffer + "0" + s + "-";
-    //         }
-    //         else{
-    //             buffer = buffer + s + "-";
-    //         }
-    //     }
+        for (String s : arr){
+            if (s.length() == 1){
+                buffer = buffer + "0" + s + "-";
+            }
+            else{
+                buffer = buffer + s + "-";
+            }
+        }
 
-    //     buffer = buffer.substring(0, buffer.length() - 1);
+        buffer = buffer.substring(0, buffer.length() - 1);
 
-    //     System.out.println("dsdfdfdsd " + buffer);
+        System.out.println("dsdfdfdsd " + buffer);
 
-    //     return LocalDate.parse(buffer);
-    // }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+
+        return LocalDate.parse(buffer, formatter);
+    }
 
 }
