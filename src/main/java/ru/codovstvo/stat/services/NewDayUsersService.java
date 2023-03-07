@@ -28,11 +28,11 @@ public class NewDayUsersService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         for (SessionInfo sessionInfo : allData){
-            System.out.println("----: " + sessionInfo.getStartDateSession().replace(".", "-"));
+            // System.out.println("----: " + sessionInfo.getStartDateSession().replace(".", "-"));
 
-            dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
+            // dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
             
-            // dates.add(parseDate(sessionInfo.getStartDateSession()));
+            dates.add(parseDate(sessionInfo.getStartDateSession()));
         }
         
         return dates;
@@ -56,7 +56,7 @@ public class NewDayUsersService {
 
         System.out.println("dsdfdfdsd " + buffer);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         return LocalDate.parse(buffer, formatter);
     }
