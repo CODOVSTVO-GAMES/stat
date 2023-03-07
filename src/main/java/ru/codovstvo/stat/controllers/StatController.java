@@ -22,7 +22,7 @@ public class StatController {
     @Autowired
     NewDayUsersService newDayUsersService;
     
-    @PostMapping("get")
+    @GetMapping("get")
     public Set<String> get1() {
         // System.out.println(requestBody);
         return newDayUsersService.getNumberUsers();
