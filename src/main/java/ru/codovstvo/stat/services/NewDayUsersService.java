@@ -1,6 +1,8 @@
 package ru.codovstvo.stat.services;
 
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,39 +25,37 @@ public class NewDayUsersService {
         //получить данные за последние n дней
         Set<LocalDate> dates = new HashSet<LocalDate>();
         List<SessionInfo> allData = sessionInfoRepo.findAll();
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
         for (SessionInfo sessionInfo : allData){
-            // dates.add(sessionInfo.getStartDateSession());
-            dates.add(parseDate(sessionInfo.getStartDateSession()));
+            dates.add(LocalDate.parse(sessionInfo.getStartDateSession().replace(".", "-"), formatter));
+            
+            // dates.add(parseDate(sessionInfo.getStartDateSession()));
         }
         
         return dates;
     }
 
-    private LocalDate parseDate(String strDate){
-        System.out.println("dsd " + strDate);
+    // private LocalDate parseDate(String strDate){
+    //     String[] arr = strDate.split("\\.");
 
-        String[] arr = strDate.replace(".", "-").split("-");
+    //     String buffer = new String();
 
-        String buffer = new String();
+    //     for (String s : arr){
+    //         if (s.length() == 1){
+    //             buffer = buffer + "0" + s + "-";
+    //         }
+    //         else{
+    //             buffer = buffer + s + "-";
+    //         }
+    //     }
 
-        for (String s : arr){
-            System.out.println("omg" + s);
-            if (s.length() == 1){
-                buffer = buffer + "0" + s + "-";
-            }
-            else{
-                buffer = buffer + s + "-";
-            }
-        }
+    //     buffer = buffer.substring(0, buffer.length() - 1);
 
-        System.out.println("dsdsd " + buffer);
+    //     System.out.println("dsdfdfdsd " + buffer);
 
-        buffer = buffer.substring(0, buffer.length() - 1);
-
-        System.out.println("dsdfdfdsd " + buffer);
-
-        return LocalDate.parse(buffer);
-    }
+    //     return LocalDate.parse(buffer);
+    // }
 
 }
