@@ -11,7 +11,7 @@ public interface SessionInfoRepo extends CrudRepository<SessionInfo, Long> {
     
     List<SessionInfo> findAllByPlatformUserId(String platformUserId);
 
-    boolean deleteAllByPlatformUserId(String platformUserId);
+    void deleteAllByPlatformUserId(String platformUserId);
 
     List<SessionInfo> findAll();
 
