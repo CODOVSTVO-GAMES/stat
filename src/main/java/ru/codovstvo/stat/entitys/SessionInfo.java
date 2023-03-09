@@ -35,7 +35,7 @@ public class SessionInfo {
 
     private String leghtSession;
 
-    private int countSession;
+    private Integer countSession;
 
     @Column(columnDefinition="TEXT")
     private String mergeCountItems;//
@@ -43,67 +43,67 @@ public class SessionInfo {
     private Integer clickBank;//
 
 
-    private int wastesMoney;
+    private Integer wastesMoney;
 
-    private int wastesRuby;
+    private Integer wastesRuby;
 
-    private int wastesEnergy;
+    private Integer wastesEnergy;
 
-    private int wastesFruit;
+    private Integer wastesFruit;
 
-    private int wastesApple;
+    private Integer wastesApple;
 
-    private int wastesTangerine;
+    private Integer wastesTangerine;
 
-    private int wastesRaspberry;
+    private Integer wastesRaspberry;
 
-    private int wastesKey;
+    private Integer wastesKey;
 
 
-    private int earnedExpirience;
+    private Integer earnedExpirience;
     
-    private int earnedMoney;
+    private Integer earnedMoney;
 
-    private int earnedRuby;
+    private Integer earnedRuby;
 
-    private int earnedEnergy;
+    private Integer earnedEnergy;
 
-    private int earnedFruit;
+    private Integer earnedFruit;
 
-    private int earnedApple;
+    private Integer earnedApple;
 
-    private int earnedTangerine;
+    private Integer earnedTangerine;
 
-    private int earnedRaspberry;
+    private Integer earnedRaspberry;
 
-    private int earnedKey;
+    private Integer earnedKey;
 
     
-    private int activeOrder;
+    private Integer activeOrder;
     
-    private int collectOrder;
+    private Integer collectOrder;
 
 
-    private int successQuest;
+    private Integer successQuest;
 
-    private int successDailyTask;
+    private Integer successDailyTask;
 
 
-    private int countBuyItemShopMoney;
+    private Integer countBuyItemShopMoney;
 
-    private int countBuyItemShopRuby;
+    private Integer countBuyItemShopRuby;
 
-    private int countBuyItemShopEnergy;
+    private Integer countBuyItemShopEnergy;
 
-    private int countBuyItemShopWorker;
+    private Integer countBuyItemShopWorker;
 
-    private int countBuyItemShopFruit;
+    private Integer countBuyItemShopFruit;
 
-    private int countBuyItemShopResources;
+    private Integer countBuyItemShopResources;
 
-    private int countBuyItemShopSales;
+    private Integer countBuyItemShopSales;
 
-    private int countBuyItemShopOrder;
+    private Integer countBuyItemShopOrder;
     
 
     private String indexBuyItemShopMoney;
@@ -123,18 +123,18 @@ public class SessionInfo {
     private String indexBuyItemShopSales;
 
 
-    private int clickAD;
+    private Integer clickAD;
 
-    private int successAD;
+    private Integer successAD;
 
-    private int errorAD;
+    private Integer errorAD;
     
 
-    private int clickDonate;
+    private Integer clickDonate;
 
-    private int successDonate;
+    private Integer successDonate;
 
-    private int redirectCount;
+    private Integer redirectCount;
 
     private String typeClickDonate;
 

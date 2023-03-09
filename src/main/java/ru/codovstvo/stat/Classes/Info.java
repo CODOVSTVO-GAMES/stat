@@ -18,75 +18,75 @@ public class Info {
 
     public String lengthSeccion;
 
-    public Integer countSeccion;
+    public int countSeccion = 0;
     
 
     public int[] mergeCountItems = new int[0];
 
-    public Integer clickBank = 0;
+    public int clickBank = 0;
 
 
-    public Integer wastesMoney;
+    public int wastesMoney;
 
-    public Integer wastesRuby;
+    public int wastesRuby;
 
-    public Integer wastesEnergy;
+    public int wastesEnergy;
 
-    public Integer wastesFruit;
+    public int wastesFruit;
 
-    public Integer wastesApple;
+    public int wastesApple;
 
-    public Integer wastesTangerine;
+    public int wastesTangerine;
 
-    public Integer wastesRaspberry;
+    public int wastesRaspberry;
 
-    public Integer wastesKey;
+    public int wastesKey;
 
 
-    public Integer earnedExpirience;
+    public int earnedExpirience;
     
-    public Integer earnedMoney;
+    public int earnedMoney;
 
-    public Integer earnedRuby;
+    public int earnedRuby;
 
-    public Integer earnedEnergy;
+    public int earnedEnergy;
 
-    public Integer earnedFruit;
+    public int earnedFruit;
 
-    public Integer earnedApple;
+    public int earnedApple;
 
-    public Integer earnedTangerine;
+    public int earnedTangerine;
 
-    public Integer earnedRaspberry;
+    public int earnedRaspberry;
 
-    public Integer earnedKey;
+    public int earnedKey;
 
     
-    public Integer activeOrder;
+    public int activeOrder;
     
-    public Integer collectOrder;
+    public int collectOrder;
 
 
-    public Integer successQuest;
+    public int successQuest;
 
-    public Integer successDailyTask;
+    public int successDailyTask;
 
 
-    public Integer countBuyItemShopMoney;
+    public int countBuyItemShopMoney;
 
-    public Integer countBuyItemShopRuby;
+    public int countBuyItemShopRuby;
 
-    public Integer countBuyItemShopEnergy;
+    public int countBuyItemShopEnergy;
 
-    public Integer countBuyItemShopWorker;
+    public int countBuyItemShopWorker;
 
-    public Integer countBuyItemShopFruit;
+    public int countBuyItemShopFruit;
 
-    public Integer countBuyItemShopResources;
+    public int countBuyItemShopResources;
 
-    public Integer countBuyItemShopSales;
+    public int countBuyItemShopSales;
 
-    public Integer countBuyItemShopOrder;
+    public int countBuyItemShopOrder;
 
 
     public int[] indexBuyItemShopMoney;
@@ -106,18 +106,18 @@ public class Info {
     public int[] indexBuyItemShopSales;
 
 
-    public Integer clickAD;
+    public int clickAD;
 
-    public Integer successAD;
+    public int successAD;
 
-    public Integer errorAD;
+    public int errorAD;
     
 
-    public Integer clickDonate;
+    public int clickDonate;
 
-    public Integer successDonate;
+    public int successDonate;
 
-    public Integer redirectCount;
+    public int redirectCount;
 
     public String[] typeClickDonate;
 
@@ -126,7 +126,7 @@ public class Info {
     public int[] timeSpawnClouds;
 
 
-    public Integer countCollectCloud = 0;
+    public int countCollectCloud = 0;
 
     public int[] countSpawnCloudText = new int[0];
 }
