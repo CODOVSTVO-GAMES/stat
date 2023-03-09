@@ -86,7 +86,7 @@ public class UserInfo {
     }
 
     public void findAndAddFirstReference(LocalDate ld){
-        if (firstReference != null && firstReference.isAfter(ld)){
+        if (firstReference != null && firstReference.isAfter(ld) && ld != null){
             firstReference = ld;
         }
     }
