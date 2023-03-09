@@ -140,7 +140,7 @@ public class SessionInfo {
 
     private String timeClickDonate;
 
-    private String timeSpawnClouds;
+    private String timeSpawnClouds;//заменено на timeSpawnCloudsText
 
     private Integer countCollectCloud;
 
@@ -168,6 +168,7 @@ public class SessionInfo {
         this.countSession = info.countSeccion;
 
         this.mergeCountItems = intArrayToString(info.mergeCountItems);
+        System.out.println("---" + info.clickBank);
         this.clickBank = info.clickBank;
 
         this.wastesMoney = info.wastesMoney;
