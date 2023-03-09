@@ -75,6 +75,8 @@ public class AutoService {
 
     private UserInfo fillUser(UserInfo user){
         List<SessionInfo> sessions = sessionInfoRepo.findAllByPlatformUserId(user.getPlatformUserId());
+        
+        System.out.println("Сессий "+ user.getPlatformUserId() + " у юзера " + sessions.size());
 
         for(SessionInfo s : sessions){
             user.findAndAddMaxCountSession(s.getCountSession());
