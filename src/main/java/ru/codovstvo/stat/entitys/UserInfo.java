@@ -80,8 +80,7 @@ public class UserInfo {
     }
 
     public void findAndAddMaxCountSession(Integer countSession){
-
-        if (countSession > this.countSession && countSession != null){
+        if (countSession != null && countSession > this.countSession){
             this.countSession = countSession;
         }
     }
