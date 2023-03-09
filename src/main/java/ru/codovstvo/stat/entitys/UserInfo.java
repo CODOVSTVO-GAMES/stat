@@ -24,52 +24,52 @@ public class UserInfo {
 
     private LocalDate firstReference;
 
-    private Integer countSession;
+    private Integer countSession = 0;
 
-    private Integer lengthLivetime;
+    private Integer lengthLivetime = 0;
 
 
-    private Integer clickBank;
+    private Integer clickBank = 0;
 
-    private Integer clickAd;
+    private Integer clickAd = 0;
 
-    private Integer successAd;
+    private Integer successAd = 0;
 
-    private Integer clickDonate;
+    private Integer clickDonate = 0;
 
-    private Integer successDonate;
+    private Integer successDonate = 0;
 
-    private Integer countCollectCloud;
+    private Integer countCollectCloud = 0;
 
-    private Integer successQuest;
+    private Integer successQuest = 0;
 
-    private Integer successDailyTask;
+    private Integer successDailyTask = 0;
 
-    private Integer activeOrder;
+    private Integer activeOrder = 0;
 
-    private Integer collectOrder;
+    private Integer collectOrder = 0;
 
     
-    private Integer earnedKey;
+    private Integer earnedKey = 0;
 
-    private Integer earnedFruit;
+    private Integer earnedFruit = 0;
 
-    private Integer earnedEnergy;
+    private Integer earnedEnergy = 0;
 
-    private Integer earnedRuby;
+    private Integer earnedRuby = 0;
 
-    private Integer earnedMoney;
+    private Integer earnedMoney = 0;
 
 
-    private Integer wastesKey;
+    private Integer wastesKey = 0;
 
-    private Integer wastesFruit;
+    private Integer wastesFruit = 0;
 
-    private Integer wastesEnergy;
+    private Integer wastesEnergy = 0;
 
-    private Integer wastesRuby;
+    private Integer wastesRuby = 0;
 
-    private Integer wastesMoney;
+    private Integer wastesMoney = 0;
 
 
     public UserInfo(){
@@ -80,7 +80,7 @@ public class UserInfo {
     }
 
     public void findAndAddMaxCountSession(Integer countSession){
-        if (countSession != null && this.countSession != null && countSession > this.countSession){
+        if (countSession != null && countSession > this.countSession){
             this.countSession = countSession;
         }
     }
