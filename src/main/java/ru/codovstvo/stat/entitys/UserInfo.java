@@ -79,8 +79,9 @@ public class UserInfo {
         this.platformUserId = platformUserId;
     }
 
-    public void findAndAddMaxCountSession(int countSession){
-        if (countSession > this.countSession){
+    public void findAndAddMaxCountSession(Integer countSession){
+
+        if (countSession > this.countSession && countSession != null){
             this.countSession = countSession;
         }
     }
@@ -91,88 +92,130 @@ public class UserInfo {
         }
     }
 
-    public void addLivetime(int liveTime){
-        lengthLivetime += liveTime;
+    public void addLivetime(Integer liveTime){
+        if (liveTime != null){
+            lengthLivetime += liveTime;
+        }
     }
 
-    public void addClickBank(int clickBank){
-        this.clickBank += clickBank;
+    public void addClickBank(Integer clickBank){
+        if (clickBank != null){
+            this.clickBank += clickBank;
+        }
     }
 
-    public void addClickAd(int clickAd){
-        this.clickAd += clickAd;
+    public void addClickAd(Integer clickAd){
+        if (clickAd != null){
+            this.clickAd += clickAd;
+        }
     }
 
-    public void addSuccessAd(int successAd){
-        this.successAd += successAd;
+    public void addSuccessAd(Integer successAd){
+        if (successAd != null){
+            this.successAd += successAd;
+        }
     }
 
-    public void addClickDonate(int clickDonate){
-        this.clickDonate += clickDonate;
+    public void addClickDonate(Integer clickDonate){
+        if (clickDonate != null){
+            this.clickDonate += clickDonate;
+        }
     }
 
-    public void addSuccessDonate(int successDonate){
-        this.successDonate += successDonate;
+    public void addSuccessDonate(Integer successDonate){
+        if (successDonate != null){
+            this.successDonate += successDonate;
+        }
     }
 
-    public void addCountCollectCloud(int countCollectCloud){
-        this.countCollectCloud += countCollectCloud;
+    public void addCountCollectCloud(Integer countCollectCloud){
+        if (countCollectCloud != null){
+            this.countCollectCloud += countCollectCloud;
+        }
     }
 
-    public void addSuccessQuest(int successQuest){
-        this.successQuest += successQuest;
+    public void addSuccessQuest(Integer successQuest){
+        if (successQuest != null){
+            this.successQuest += successQuest;
+        }
     }
 
-    public void addSuccessDailyTask(int successDailyTask){
-        this.successDailyTask += successDailyTask;
+    public void addSuccessDailyTask(Integer successDailyTask){
+        if (successDailyTask != null){
+            this.successDailyTask += successDailyTask;
+        }
     }
 
-    public void addActiveOrder(int activeOrder){
-        this.activeOrder += activeOrder;
+    public void addActiveOrder(Integer activeOrder){
+        if (activeOrder != null){
+            this.activeOrder += activeOrder;
+        }
     }
 
-    public void addCollectOrder(int collectOrder){
-        this.collectOrder += collectOrder;
+    public void addCollectOrder(Integer collectOrder){
+        if (collectOrder != null){
+            this.collectOrder += collectOrder;
+        }
     }
 
-    public void addEarnedKey(int earnedKey){
-        this.earnedKey += earnedKey;
+    public void addEarnedKey(Integer earnedKey){
+        if (earnedKey != null){
+            this.earnedKey += earnedKey;
+        }
     }
 
-    public void addEarnedFruit(int earnedFruit){
-        this.earnedFruit += earnedFruit;
+    public void addEarnedFruit(Integer earnedFruit){
+        if (earnedFruit != null){
+            this.earnedFruit += earnedFruit;
+        }
     }
 
-    public void addEarnedEnergy(int earnedEnergy){
-        this.earnedEnergy += earnedEnergy;
+    public void addEarnedEnergy(Integer earnedEnergy){
+        if (earnedEnergy != null){
+            this.earnedEnergy += earnedEnergy;
+        }
     }
 
-    public void addEarnedRuby(int earnedRuby){
-        this.earnedRuby += earnedRuby;
+    public void addEarnedRuby(Integer earnedRuby){
+        if (earnedRuby != null){
+            this.earnedRuby += earnedRuby;
+        }
     }
 
-    public void addEarnedMoney(int earnedMoney){
-        this.earnedMoney += earnedMoney;
+    public void addEarnedMoney(Integer earnedMoney){
+        if (earnedMoney != null){
+            this.earnedMoney += earnedMoney;
+        }
     }
 
-    public void addWastesKey(int wastesKey){
-        this.wastesKey += wastesKey;
+    public void addWastesKey(Integer wastesKey){
+        if (wastesKey != null){
+            this.wastesKey += wastesKey;
+        }
     }
 
-    public void addWastesFruit(int wastesFruit){
-        this.wastesFruit += wastesFruit;
+    public void addWastesFruit(Integer wastesFruit){
+        if (wastesFruit != null){
+            this.wastesFruit += wastesFruit;
+        }
     }
 
-    public void addWastesEnergy(int wastesEnergy){
-        this.wastesEnergy += wastesEnergy;
+    public void addWastesEnergy(Integer wastesEnergy){
+        if (wastesEnergy != null){
+            this.wastesEnergy += wastesEnergy;
+        }
     }
 
-    public void addWastesRuby(int wastesRuby){
-        this.wastesRuby += wastesRuby;
+    public void addWastesRuby(Integer wastesRuby){
+        if (wastesRuby != null){
+            this.wastesRuby += wastesRuby;
+        }
     }
 
-    public void addWastesMoney(int wastesMoney){
-        this.wastesMoney += wastesMoney;
+    public void addWastesMoney(Integer wastesMoney){
+        if (wastesMoney != null){
+            this.wastesMoney += wastesMoney;
+        }
     }
 
     public float getAverageLengthSession(){
