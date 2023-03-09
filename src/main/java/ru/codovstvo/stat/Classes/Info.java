@@ -18,7 +18,7 @@ public class Info {
 
     public String lengthSeccion;
 
-    public int countSeccion;
+    public int countSeccion = 0;
     
 
     public int[] mergeCountItems = new int[0];
