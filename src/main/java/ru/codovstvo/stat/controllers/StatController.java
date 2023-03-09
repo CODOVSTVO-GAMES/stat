@@ -32,6 +32,12 @@ public class StatController {
     
     //Готовы --->
 
+    @GetMapping("getaveragecountsession")
+    public List<DateInfo> getAverageCountSession() {
+        // System.out.println(requestBody);
+        return newDayUsersService.getAverageCountSessionByUser();
+    }
+
     @GetMapping("getsessionlength")
     public List<DateInfo> getSessionLength() {
         // System.out.println(requestBody);

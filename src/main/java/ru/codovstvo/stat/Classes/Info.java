@@ -6,6 +6,8 @@ public class Info {
 
     public String platform;
 
+    public String device;
+
     public String startDataSession;
 
     public String startTimeSession;

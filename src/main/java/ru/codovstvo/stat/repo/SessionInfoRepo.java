@@ -8,8 +8,11 @@ import ru.codovstvo.stat.entitys.SessionInfo;
 
 public interface SessionInfoRepo extends CrudRepository<SessionInfo, Long> {
     SessionInfo findByPlatformUserIdAndCountSession(String platformUserId, int CountSession);
+    
+    List<SessionInfo> findAllByPlatformUserId(String platformUserId);
+
     boolean deleteAllByPlatformUserId(String platformUserId);
-    // Set<String> findAllStartDateSessionDistinct();
+
     List<SessionInfo> findAll();
 
     List<SessionInfo> findAllByStartDateSessionAndCountSession(String date, int count);

@@ -22,6 +22,8 @@ public class SessionInfo {
 
     private String platform;
 
+    private String device;//
+
 
     private String startDateSession;
 
@@ -157,6 +159,7 @@ public class SessionInfo {
     {
         this.platformUserId = info.userId;
         this.platform = info.platform;
+        this.device = info.device;
         this.startDateSession = info.startDataSession;
         this.startTimeSession = info.startTimeSession;
         this.endDateSession = info.endDataSession;

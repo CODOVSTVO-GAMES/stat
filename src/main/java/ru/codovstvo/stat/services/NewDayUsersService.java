@@ -76,20 +76,8 @@ public class NewDayUsersService {
     private float countNumberSession(List<SessionInfo> array){
         if(array.size() == 0) return 0;
 
-        System.out.println("----");
-        System.out.println(array.size());
-        System.out.println(getUniqueUsers(array).size());
-        System.out.println(array.size() / getUniqueUsers(array).size());
-        System.out.println("----");
-
         float num1 = array.size();
         float num2 = getUniqueUsers(array).size();
-
-        System.out.println("----");
-        System.out.println(num1);
-        System.out.println(num2);
-        System.out.println(num1 / num2);
-        System.out.println("----");
 
         return num1 / num2;
     }
@@ -187,7 +175,7 @@ public class NewDayUsersService {
         return sortedLocalDates;
     }
 
-    private LocalDate stringToDate(String strDate){
+    public LocalDate stringToDate(String strDate){
         String[] arr = strDate.split("\\.");
 
         String buffer = new String();
@@ -206,7 +194,7 @@ public class NewDayUsersService {
         return LocalDate.parse(buffer, formatter);
     }
 
-    private String dateToString(LocalDate date){
+    public String dateToString(LocalDate date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
         return date.format(formatter);
     }
