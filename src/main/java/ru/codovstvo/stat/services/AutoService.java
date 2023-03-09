@@ -38,7 +38,7 @@ public class AutoService {
         }
     }
 
-    @Scheduled(initialDelay = 60, fixedDelay = 6000000)
+    @Scheduled(initialDelay = 6000, fixedDelay = 6000000)
     public void AutoCounter(){
         System.out.println("Запущено заполнение пользователей");
         List<SessionInfo> sessions = sessionInfoRepo.findAll();
