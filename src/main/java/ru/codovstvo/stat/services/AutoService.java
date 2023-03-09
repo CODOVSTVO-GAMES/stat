@@ -41,6 +41,9 @@ public class AutoService {
     @Scheduled(initialDelay = 600, fixedDelay = 6000000)
     public void AutoCounter(){
         System.out.println("Запущено заполнение пользователей");
+
+        userInfoRepo.deleteAll();
+        
         List<SessionInfo> sessions = sessionInfoRepo.findAll();
 
         List<UserInfo> uniqUsers = findUniqueUsers(sessions);

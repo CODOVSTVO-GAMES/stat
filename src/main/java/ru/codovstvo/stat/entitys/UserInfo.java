@@ -87,7 +87,7 @@ public class UserInfo {
 
     public void findAndAddFirstReference(LocalDate ld){
         if (firstReference == null) firstReference = ld;
-        else if (firstReference.isBefore(ld)) firstReference.isAfter(ld);
+        else if (firstReference.isAfter(ld)) firstReference.isAfter(ld);
     }
 
     public void addLivetime(Integer liveTime){
