@@ -45,6 +45,9 @@ public class AutoService {
 
         List<UserInfo> uniqUsers = findUniqueUsers(sessions);
 
+        System.out.println("Сессий: " + sessions.size());
+        System.out.println("Юзеров: " + uniqUsers.size());
+
         for (UserInfo user : uniqUsers){
             userInfoRepo.save(fillUser(user));
         }
